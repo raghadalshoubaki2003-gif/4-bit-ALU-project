@@ -1,0 +1,2 @@
+PASS: 2048 vectors checked; ALU, mode suppression, BCD and 7-segment outputs match reference.
+tb/tb_alu4.v:44: $finish called at 2048000 (1ps)

@@ -1,0 +1,15 @@
+flowchart LR
+  A["A[3:0]"] --> LOGIC["Logic unit<br/>AND · XOR · NAND · XNOR"]
+  B["B[3:0]"] --> LOGIC
+  A --> ARITH["Arithmetic unit<br/>ADD · |A−B| · ADD+1 · 2A"]
+  B --> ARITH
+  M["M"] --> MODE["Mode output control"]
+  S["S1,S0"] --> LOGIC
+  S --> ARITH
+  LOGIC --> MODE
+  ARITH --> MODE
+  MODE -->|"L[3:0]"| L["4 logic LEDs"]
+  MODE -->|"R[4:0]"| BCD["Binary-to-BCD<br/>00–31"]
+  MODE -->|"N"| N["Negative LED"]
+  BCD --> DEC["Two BCD-to-7-segment decoders"]
+  DEC --> DISP["Tens and ones displays"]
